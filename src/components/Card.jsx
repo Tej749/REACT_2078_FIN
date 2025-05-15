@@ -12,9 +12,11 @@ function Card ({blog}){
         <div className="card">
            <a className="p-8 max-w-lg border border-indigo-300 rounded-2xl hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center"
     href="#">
-    <img src={"http://localhost:3000/" + blog.image} className="shadow rounded-lg overflow-hidden border" />
+    <img src={blog.image} className="shadow rounded-lg overflow-hidden border" />
     <div className="mt-8">
         <h4 className="font-bold text-xl">{blog.faculty}</h4>
+        <h4 className="font-bold text-xl">{blog.course}</h4>
+        <h4 className="font-bold text-xl">{blog.mentor}</h4>
         <p className="mt-2 text-gray-600">Create Exercises for any subject with the topics you and your students care about.
         </p>
         <div className="mt-5">

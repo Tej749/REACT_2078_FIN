@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 function SingleBlog() {
     const {id} = useParams()
@@ -37,8 +37,9 @@ function SingleBlog() {
         <div className="flex flex-col md:flex-row -mx-4">
             <div className="md:flex-1 px-4">
                 <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
-                    <img className="w-full h-full object-cover" src={"http://localhost:3000/" + blog.image} alt="Product Image" />
+                    <img className="w-full h-full object-cover" src={blog.image} alt="Product Image" />
                 </div>
+                <Link to={`/edit/${id}`}>
                 <div className="flex -mx-2 mb-4">
                     <div className="w-1/2 px-2">
                         <button className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Edit</button>
@@ -48,6 +49,7 @@ function SingleBlog() {
                         <button className="w-full bg-red-500 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600" onClick={deleteBlog}>Delete</button>
                     </div>
                 </div>
+                </Link>
             </div>
             <div className="md:flex-1 px-4">
                 <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">{blog.faculty}</h2>

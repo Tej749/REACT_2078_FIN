@@ -15,6 +15,8 @@ function App() {
           <Route path="/create" element={<CreateBlog />} />
           <Route path="/edit/:id" element={<EditBlog />} />
 
+
+          
         </Routes>
       </BrowserRouter>
     </>

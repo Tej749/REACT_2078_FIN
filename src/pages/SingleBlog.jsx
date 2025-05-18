@@ -7,10 +7,10 @@ function SingleBlog() {
     const {id} = useParams()
     const navigate = useNavigate()
     const [blog, setBlog] = useState({}) // object form use curly bracket
+
     const fetchSingleBlog = async() =>{
         const response = await axios.get("http://localhost:3000/blog/" + id)
-        setBlog(response.data.data)
-        
+        setBlog(response.data.data)     
     }
  useEffect(()=>{
     fetchSingleBlog()
